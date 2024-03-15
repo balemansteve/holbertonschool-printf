@@ -87,8 +87,7 @@ int print_number(int n)
         count += print_number(num / 10);
     }
 
-    char digit = '0' + num % 10;
-    count += write(1, &digit, 1);
+    count += write(1, "0" + num % 10, 1);
 
     return (count);
 }
