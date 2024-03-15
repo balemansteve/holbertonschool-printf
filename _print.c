@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
     const char *ptr = format;
     char *str_arg;
     char char_arg;
+
     va_start(args, format);
 
     while (*ptr != '\0')
@@ -24,6 +25,8 @@ int _printf(const char *format, ...)
         if (*ptr == '%')
         {
             ptr++;
+            if (*ptr == '\0')
+                break;
             switch (*ptr)
             {
                 case 'c':
@@ -32,16 +35,16 @@ int _printf(const char *format, ...)
                     break;
                 case 's':
                     str_arg = va_arg(args, char *);
-		    if (!str_arg)
-		      {
-			count += write(1, "(null)", 6);
-		      }
-		    else
-		      {
-                    count += write(1, str_arg, _strlen(str_arg));
-		      }
+                    if (!str_arg)
+                    {
+                        count += write(1, "(null)", 6);
+                    }
+                    else
+                    {
+                        count += write(1, str_arg, _strlen(str_arg));
+                    }
                     break;
-                case 'd':
+	    case 'd': /* aun no implementado */
                 case 'i':
                     count += print_number(va_arg(args, int));
                     break;
@@ -60,9 +63,11 @@ int _printf(const char *format, ...)
         }
         ptr++;
     }
+
     va_end(args);
-    return (count);
+    return count;
 }
+
 /**
  * _strlen - Recorre una string para saber su longitud
  * @str: string a ser recorrida
