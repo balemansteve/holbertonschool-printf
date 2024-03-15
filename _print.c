@@ -32,10 +32,13 @@ int _printf(const char *format, ...)
                     break;
                 case 's':
                     str_arg = va_arg(args, char *);
-                    count += write(1, str_arg, _strlen(str_arg));
 		    if (!str_arg)
 		      {
-			str_arg = NULL;
+			count += write(1, "(null)", 6);
+		      }
+		    else
+		      {
+                    count += write(1, str_arg, _strlen(str_arg));
 		      }
                     break;
                 case 'd':
