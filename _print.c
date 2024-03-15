@@ -71,6 +71,7 @@ int print_number(int n)
 {
     int count = 0;
     unsigned int num;
+    char digit;
 
     if (n < 0)
     {
@@ -86,8 +87,8 @@ int print_number(int n)
     {
         count += print_number(num / 10);
     }
-
-    count += write(1, "0" + num % 10, 1);
+digit = '0' + num % 10;
+    count += write(1, &digit, 1);
 
     return (count);
 }
