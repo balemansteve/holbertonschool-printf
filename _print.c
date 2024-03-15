@@ -56,7 +56,11 @@ int _printf(const char *format, ...)
     va_end(args);
     return (count);
 }
-
+/**
+ * _strlen - Recorre una string para saber su longitud
+ * @str: string a ser recorrida
+ * Return: longitud de la string
+ */
 int _strlen(const char *str)
 {
     int len = 0;
@@ -66,7 +70,11 @@ int _strlen(const char *str)
       }
     return (len);
 }
-
+/**
+ * print_number - logica para printear numeros
+ * @n: numero a ser printeado
+ * Return: count
+ */
 int print_number(int n)
 {
     int count = 0;
