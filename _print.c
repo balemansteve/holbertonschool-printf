@@ -25,8 +25,6 @@ int _printf(const char *format, ...)
 		if (*ptr == '%')
 		{
 			ptr++;
-			if (*ptr == '\0')
-				break;
 
 			if (*ptr == '%')
 			{
@@ -34,6 +32,9 @@ int _printf(const char *format, ...)
 				ptr++;
 				continue;
 			}
+
+			if (*ptr == '\0')
+				break;
 
 			switch (*ptr)
 			{
