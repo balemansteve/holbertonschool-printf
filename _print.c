@@ -26,13 +26,6 @@ int _printf(const char *format, ...)
 		{
 			ptr++;
 
-			if (*ptr == '%')
-			{
-				count += write(1, "%", 1);
-				ptr++;
-				continue;
-			}
-
 			if (*ptr == '\0')
 				break;
 
@@ -71,11 +64,6 @@ int _printf(const char *format, ...)
 			count += write(1, ptr, 1);
 		}
 		ptr++;
-
-		if (*ptr == '\0' && *(ptr - 1) == '%')
-		{
-			break;
-		}
 	}
 
 	va_end(args);
