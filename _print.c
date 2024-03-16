@@ -71,6 +71,11 @@ int _printf(const char *format, ...)
 			count += write(1, ptr, 1);
 		}
 		ptr++;
+
+		if (*ptr == '\0' && *(ptr - 1) == '%')
+		{
+			break;
+		}
 	}
 
 	va_end(args);
