@@ -27,6 +27,14 @@ int _printf(const char *format, ...)
 			ptr++;
 			if (*ptr == '\0')
 				break;
+
+			if (*ptr == '%')
+			{
+				count += write(1, "%", 1);
+				ptr++;
+				continue;
+			}
+
 			switch (*ptr)
 			{
 				case 'c':
