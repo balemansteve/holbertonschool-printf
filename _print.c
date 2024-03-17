@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 						count += write(1, str_arg, _strlen(str_arg));
 					}
 						break;
-					case 'd': /* aun no implementado */
+					case 'd':
 					case 'i':
 						count += print_number(va_arg(args, int));
 						break;
