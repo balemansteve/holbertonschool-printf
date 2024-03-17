@@ -56,8 +56,6 @@ int _printf(const char *format, ...)
 				default:
 					--ptr;
 					count += write(1, ptr, 1);
-					++ptr;
-					count += write(1, ptr, 1);
 					break;
 			}
 		}
