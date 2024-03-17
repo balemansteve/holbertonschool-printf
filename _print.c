@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 					count += write(1, "%", 1);
 					break;
 				default:
-					--ptr;
+					ptr--;
 					count += write(1, ptr, 1);
 					break;
 			}
