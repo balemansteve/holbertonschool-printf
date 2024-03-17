@@ -24,19 +24,30 @@ int _printf(const char *format, ...)
 	{
 		if (*ptr == '%')
 		{
-			ptr++;
-
-			if (*ptr == '\0')
-				break;
-
-			switch (*ptr)
+			if (*(ptr + 1) == '\0')
 			{
-				case 'c':
-					char_arg = (char)va_arg(args, int);
-					count += write(1, &char_arg, 1);
-					break;
-				case 's':
-					str_arg = va_arg(args, char *);
+				count += write(1, "%", 1);
+				break;
+			}
+
+			else
+			{
+				if (*(ptr + 1) == 'c' ||
+						*(ptr + 1) == 's' ||
+						*(ptr + 1) == 'd' ||
+						*(ptr + 1) == 'i' ||
+						*(ptr + 1) == '%')
+				{
+					ptr++;
+
+					switch (*ptr)
+					{
+						case 'c':
+							char_arg = (char)va_arg(args, int);
+							count += write(1, &char_arg, 1);
+							break;
+						case 's':
+							str_arg = va_arg(args, char *);
 					if (!str_arg)
 					{
 						count += write(1, "(null)", 6);
@@ -45,18 +56,20 @@ int _printf(const char *format, ...)
 					{
 						count += write(1, str_arg, _strlen(str_arg));
 					}
-					break;
-				case 'd': /* aun no implementado */
-				case 'i':
-					count += print_number(va_arg(args, int));
-					break;
-				case '%':
+							break;
+						case 'd': /* aun no implementado */
+						case 'i':
+							count += print_number(va_arg(args, int));
+							break;
+						case '%':
+							count += write(1, "%", 1);
+							break;
+					}
+				}
+				else
+				{
 					count += write(1, "%", 1);
-					break;
-				default:
-					ptr--;
-					count += write(1, ptr, 1);
-					break;
+				}
 			}
 		}
 		else
