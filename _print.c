@@ -26,11 +26,10 @@ int _printf(const char *format, ...)
 		{
 			if (*(ptr + 1) == '\0')
 			{
-				count += write(1, "%", 1);
 				break;
 			}
 
-			else if (*(ptr + 1) != '\0')
+			if (*(ptr + 1) != '\0')
 			{
 				ptr++;
 
@@ -58,11 +57,11 @@ int _printf(const char *format, ...)
 					case '%':
 						count += write(1, "%", 1);
 						break;
+					default:
+						count += write(1, "%", 1);
+						count += write(1, ptr, 1);
+						break;
 				}
-			}
-			else
-			{
-				count += write(1, "%", 1);
 			}
 		}
 
