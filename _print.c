@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 		{
 			if (*(ptr + 1) == '\0')
 			{
-			  count += write(1, "%", 1);
 				break;
 			}
 
