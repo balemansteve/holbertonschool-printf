@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		{
 			if (*(ptr + 1) == '\0')
 			{
-				break;
+				return (-1);
 			}
 
 			if (*(ptr + 1) != '\0')
