@@ -33,6 +33,6 @@ This README.md provides a description of the `_printf` function, its implementat
 The following link includes documentation for write function in Unix for more information on its use.
 [Unix write function documentation](https://man7.org/linux/man-pages/man2/write.2.html).
 
-5) **Authors.** 👥
+4) **Authors.** 👥
    
 This project was created by **Elián González** and **Bryan Alemán**.
