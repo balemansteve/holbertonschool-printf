@@ -1,9 +1,9 @@
 # holbertonschool-printf
-Collaborative project Printf for Holberton
+Collaborative project "C - printf" for Holberton
 
 1)	Description.
 In this project we create a function that emulates part of the behavior of the printf function in the C programming language.
-The function must be able to interpret and display texto in the console based on the provided arguments.
+The function must be able to interpret and display text in the console based on the provided arguments.
 
 
 	The printf syntax is as follows:
@@ -24,12 +24,11 @@ When compiled and executed correctly, the function showld return the number of c
 
 
 3)	Instructions.
-Clone this repository in the local machine
-Compiles the file _printf.c
-Run the resulting program
-Try different formats and arguments to verify the function´soperation
+Clone this repository in the local machine.
+Compiles the file _printf.c.
+Run the resulting program.
+Try different formats and arguments to verify the functions operation.
 
 
 4)	Authors.
-This project was created by Elia�n Gona�lez and Bryanleman.
-
+This project was created by Elián González and Bryan Alemán.
