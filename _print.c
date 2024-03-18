@@ -33,6 +33,11 @@ int _printf(const char *format, ...)
 			{
 				ptr++;
 
+				if (*ptr == '%' && *(ptr + 1) == '\0')
+				{
+					return (-1);
+				}
+
 				switch (*ptr)
 				{
 					case 'c':
