@@ -16,19 +16,18 @@ format: It is a string of characters that specifies the output format.
 
 2)	Functions.
 Handling of the following placeholders:
-%c: to print characters.
+%c: to print a character.
 %s: to print character strings.
 %i: to print signed integers.
+%%: to print a character %.
 Support string formats and additional arguments.
 When compiled and executed correctly, the function showld return the number of characters printed.
 
 
-3)	Instructions.
-Clone this repository in the local machine.
-Compiles the file _printf.c.
-Run the resulting program.
-Try different formats and arguments to verify the functions operation.
-
+3)	References.
+This README.md provides a description of the _printf function, his implementation, usage and supported format.
+The following link includes documentation for write function in Unix for more information on its use.
+https://man7.org/linux/man-pages/man2/write.2.html
 
 4)	Authors.
 This project was created by Elián González and Bryan Alemán.
